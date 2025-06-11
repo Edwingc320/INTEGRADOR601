@@ -122,7 +122,8 @@ let chartOcupacion = null
 const fetchPagos = async () => {
   loading.value = true
   try {
-    const res = await fetch('http://localhost:3000/api/pagos')
+    const res = await fetch('https://integrador601.onrender.com/api/pagos')
+    //const res = await fetch('http://localhost:3000/api/pagos')
     if (!res.ok) throw new Error('Error al cargar pagos')
     const data = await res.json()
     pagos.value = data.data || data
@@ -138,7 +139,8 @@ const fetchPagos = async () => {
 const fetchOcupacion = async () => {
   loading.value = true
   try {
-    const res = await fetch('http://localhost:3000/api/ocupaciones/')
+    const res = await fetch('https://integrador601.onrender.com/api/ocupaciones/')
+    //const res = await fetch('http://localhost:3000/api/ocupaciones/')
     if (!res.ok) throw new Error('Error al cargar ocupaciones')
     const data = await res.json()
     ocupacion.value = data.data || data
