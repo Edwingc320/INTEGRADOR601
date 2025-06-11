@@ -5,7 +5,8 @@ import axios from 'axios'
 class PagoService {
   constructor() {
     this.api = axios.create({
-      baseURL: 'http://localhost:3000/api/pagos',
+      //baseURL: 'http://localhost:3000/api/pagos',
+      baseURL: 'https://integrador601.onrender.com/api/pagos',
       headers: { 'Content-Type': 'application/json' }
     })
   }

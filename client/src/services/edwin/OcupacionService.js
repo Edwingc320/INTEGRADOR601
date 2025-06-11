@@ -4,7 +4,8 @@ import axios from 'axios'
 class OcupacionService {
   constructor() {
     this.api = axios.create({
-      baseURL: 'http://localhost:3000/api/ocupaciones',
+      //baseURL: 'http://localhost:3000/api/ocupaciones',
+      baseURL: 'https://integrador601.onrender.com/api/ocupaciones',
       headers: { 'Content-Type': 'application/json' }
     })
   }
