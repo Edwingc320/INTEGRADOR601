@@ -1,7 +1,11 @@
 <template>
-  <v-card width="500" class="pa-4">
+  <v-card
+      width="600"
+      class="pa-6 elevation-8 rounded-lg"
+      style="background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%); color: black;"
+    >
     <v-card-title>{{ esEdicion ? 'Editar Usuario' : 'Crear Usuario' }}</v-card-title>
-    <v-card-text>
+    <v-card-text class="content">
       <v-form @submit.prevent="guardarUsuario" ref="formRef" v-model="formValido">
         <v-text-field
           v-model="form.nombre"
@@ -105,4 +109,74 @@ const guardarUsuario = async () => {
     alert('Error: ' + error)
   }
 }
+
+
 </script>
+
+
+<style scoped>
+.layout {
+  display: flex;
+  max-height: 100vh;  /* Para evitar que el layout se desborde */
+  overflow: hidden;   /* Corta cualquier desbordamiento */
+  background: #ffffff5b;
+  color: rgb(0, 0, 0);
+  font-family: Arial, sans-serif;
+}
+
+.sidebar {
+  width: 250px;
+  background: #a2aec600;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(244, 237, 237, 0.3);
+  overflow-y: auto;         /* Habilita scroll vertical */
+  max-height: 100vh;        /* Evita que exceda la ventana */
+}
+
+
+.sidebar h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 22px;
+  color: #ffffff;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.nav-item {
+  background: #00000062;
+  border-radius: 8px;
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background 0.3s;
+}
+.content {
+  flex: 1;
+  padding: 40px;
+  text-align: center;
+  background: #fefefe;
+  overflow-y: auto;
+  max-height: 100vh;
+}
+
+.nav-item:hover {
+  background: #ff2516;
+}
+
+.icon {
+  font-size: 20px;
+}
+
+.content {
+  flex: 1;
+  padding: 40px;
+  background: #ffffff00;
+}
+</style>

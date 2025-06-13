@@ -1,4 +1,8 @@
 <template>
+    <Topbar />
+    <NavbarLanding />
+
+
   <div class="layout">
     <aside class="sidebar">
       <h2>Administrador</h2>
@@ -43,14 +47,20 @@
   </div>
 </template>
 
+<script setup>
+import Topbar from '@/components/TopbarLanding.vue'
+import NavbarLanding from '@/components/NavbarLanding.vue'
+</script>
+
+
 <script>
 import RegistrarUsuario from '@/components/adminAccions/UsuariosFormulario.vue'
 import ModificarUsuario from '@/components/adminAccions/ModificarUsuario.vue'
 import ModificarPrecio from '@/components/adminAccions/GestionarCajones.vue'
 import Reservar from '@/components/adminAccions/ReservaFisica.vue'
-
 import EliminarUsuario from '@/components/adminAccions/EliminarUsuario.vue'
 import Reportes from '@/components/adminAccions/ReportesAdmin.vue'
+
 //import Historico from '@/components/adminAccions/Historico.vue'
 
 export default {
@@ -76,17 +86,16 @@ export default {
   display: flex;
   max-height: 100vh;  /* Para evitar que el layout se desborde */
   overflow: hidden;   /* Corta cualquier desbordamiento */
-  background: #1b1b2a;
-  color: white;
+  background: #ffffff5b;
+  color: rgb(0, 0, 0);
   font-family: Arial, sans-serif;
 }
 
-
 .sidebar {
   width: 250px;
-  background: #2e2e4d;
+  background: #a2aec600;
   padding: 20px;
-  box-shadow: 2px 0 5px rgba(0,0,0,0.3);
+  box-shadow: 2px 0 5px rgba(244, 237, 237, 0.3);
   overflow-y: auto;         /* Habilita scroll vertical */
   max-height: 100vh;        /* Evita que exceda la ventana */
 }
@@ -94,8 +103,8 @@ export default {
 
 .sidebar h2 {
   margin-bottom: 20px;
-  font-size: 22px;
   text-align: center;
+  font-size: 22px;
   color: #ffffff;
 }
 
@@ -106,7 +115,7 @@ export default {
 }
 
 .nav-item {
-  background: #4e4e79;
+  background: #00000062;
   border-radius: 8px;
   padding: 10px;
   cursor: pointer;
@@ -118,13 +127,14 @@ export default {
 .content {
   flex: 1;
   padding: 40px;
-  background: #1f1f30;
+  text-align: center;
+  background: #fefefe;
   overflow-y: auto;
   max-height: 100vh;
 }
 
 .nav-item:hover {
-  background: #6e6e9f;
+  background: #ff2516;
 }
 
 .icon {
@@ -134,6 +144,6 @@ export default {
 .content {
   flex: 1;
   padding: 40px;
-  background: #1f1f30;
+  background: #ffffff00;
 }
 </style>

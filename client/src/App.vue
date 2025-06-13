@@ -1,18 +1,35 @@
-<script setup></script>
-
 <template>
   <v-app>
-    <!-- App barra superior -->
-    <v-app-bar app color="primary" dark>
-      <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
-      <v-toolbar-title>ESTACIONAMIENTO</v-toolbar-title>
-    </v-app-bar>
 
-    <!--Contenido principal-->
-    <v-main>
-      <router-view />
+    <v-main class="background">
+      <div class="content">
+        <router-view />
+      </div>
     </v-main>
   </v-app>
 </template>
 
-<style scoped></style>
+<style scoped>
+.background {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.background::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("@/assets/img/car3.jfif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: blur(3px);
+  z-index: 0;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+}
+</style>
